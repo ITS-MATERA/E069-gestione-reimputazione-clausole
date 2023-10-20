@@ -1,0 +1,105 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:zcontrolPosFin="zsap.com.r3.cobi.s4.custposfin.z_s4_zposfinlink.controls"
+	xmlns:zcontrollinkSar="custlinksar.custlinksar.controls"
+>
+	<f:SimpleForm
+		id="headerProvision"
+		editable="false"
+		layout="ColumnLayout"
+		title="{i18n>headerProvisionTitle}"
+		columnsM="2"
+		columnsL="3"
+		columnsXL="4"
+	>
+		<f:content>
+			<Label text="{i18n>headerProvisionGjahr}"/>
+			<Text
+				id="hdrGjahr"
+				text="{ProvisionHeader>/Gjahr}"
+			/>
+			<Label text="{i18n>headerProvisionZammin}"/>
+			<Text
+				id="hdrZammin"
+				text="{ProvisionHeader>/Zammin}"
+			/>
+			<Label text="{i18n>headerProvisionZcoddecr}"/>
+			<Text
+				id="hdrZcoddecr"
+				text="{ProvisionHeader>/Zcoddecr}"
+			/>
+			<Label text="{i18n>headerProvisionZCodIpe}"/>
+			<Text
+				id="hdrZCodIpe"
+				text="{ProvisionHeader>/ZCodIpe}"
+			/>
+			<Label text="{i18n>headerProvisionZNumCla}"/>
+			<Text
+				id="hdrZNumCla"
+				text="{ProvisionHeader>/ZNumCla}"
+			/>
+			<Label text="{i18n>headerProvisionFdatk}"/>
+			<Text
+				id="hdrFdatk"
+				text="{
+					path: 'ProvisionHeader>/Fdatk',
+					formatter: '.formatter.getYear'
+				}"
+			/>
+			<Label text="{i18n>headerProvisionZImpIpeCl}"/>
+			<Text
+				id="hdrZImpIpeCl"
+				text="{ProvisionHeader>/ZImpIpeCl}"
+			/>
+			<Label text="{i18n>headerProvisionFipos}"/>
+			<zcontrolPosFin:LinkPosizioneFinanziaria
+				id="hdrFikrs"
+				anno="{ProvisionHeader>/Gjahr}"
+				eos="S"
+				fikrs="S001"
+				fase="GEST"
+				reale="R"
+				versione="D"
+				fipex="{ProvisionHeader>/Fipex}"
+				datbis="99991231"
+				text="{ProvisionHeader>/Fipex}"
+				semanticObject="ESAMINAMODIFICA"
+			/>
+			<Label text="{i18n>headerProvisionFistl}"/>
+			<zcontrollinkSar:LinkSar
+				id="hdrFistl"
+				anno="{ProvisionHeader>/Gjahr}"
+				eos="E"
+				fikrs="S001"
+				fase="GEST"
+				SEM_OBJ=""
+				reale="R"
+				versione="D"
+				bilancio=""
+				fictr="{ProvisionHeader>/Fistl}"
+				datbis="99991231"
+				text="{ProvisionHeader>/Fistl}"
+			/>
+			<Label text="{i18n>headerProvisionGeber}"/>
+			<Text
+				id="hdrGeber"
+				text="{ProvisionHeader>/Beschr}"
+			/>
+			<Label text="{i18n>headerProvisionKtext}"/>
+			<Text
+				id="hdrKtext"
+				text="{ProvisionHeader>/ZoggSpesIm}"
+			/>
+			<Label text="{i18n>headerProvisionZStatoCla}"/>
+			<Text
+				id="hdrZStatoCla"
+				text="{
+					path: 'ProvisionHeader>/ZStatoCla',
+					formatter: '.formatter.formatStateCla'
+				}"
+			/>
+		</f:content>
+	</f:SimpleForm>
+</c:FragmentDefinition>

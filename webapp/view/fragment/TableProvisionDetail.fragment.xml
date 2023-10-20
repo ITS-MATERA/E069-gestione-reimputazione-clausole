@@ -1,0 +1,131 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+>
+	<Panel
+		id="pnlTableProvisionDetail"
+		visible="false"
+		backgroundDesign="Transparent"
+	>
+		<Table
+			id="provisionDetailTable"
+			width="auto"
+			class="sapUiResponsiveMargin"
+			fixedLayout="false"
+			growing="true"
+		>
+			<headerToolbar>
+				<Toolbar>
+					<Label text="{i18n>tableProvisionDetailTitle}"/>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column
+					id="gjahr"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnGjahr}"/>
+					</header>
+				</Column>
+				<Column
+					id="zammin"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZammin}"/>
+					</header>
+				</Column>
+				<Column
+					id="zufficioliv1"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZufficioliv1}"/>
+					</header>
+				</Column>
+				<Column
+					id="zufficioliv2"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZufficioliv2}"/>
+					</header>
+				</Column>
+				<Column
+					id="zcoddecr"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZcoddecr}"/>
+					</header>
+				</Column>
+				<Column
+					id="zCodIpe"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZCodIpe}"/>
+					</header>
+				</Column>
+				<Column
+					id="zNumCla"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZNumCla}"/>
+					</header>
+				</Column>
+				<Column
+					id="fipos"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnFipos}"/>
+					</header>
+				</Column>
+				<Column
+					id="fistl"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnFistl}"/>
+					</header>
+				</Column>
+				<Column
+					id="geber"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnGeber}"/>
+					</header>
+				</Column>
+			</columns>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier text="{ProvisionDetail>/Gjahr}"/>
+					<Text text="{ProvisionDetail>/Zammin}"/>
+					<Text text="{ProvisionDetail>/Zufficioliv1}"/>
+					<Text text="{ProvisionDetail>/Zufficioliv2}"/>
+					<Text text="{ProvisionDetail>/Zcoddecr}"/>
+					<Text text="{ProvisionDetail>/ZCodIpe}"/>
+					<Text text="{ProvisionDetail>/ZNumCla}"/>
+					<Text text="{ProvisionDetail>/Fipex}"/>
+					<Text text="{ProvisionDetail>/Fistl}"/>
+					<Text text="{ProvisionDetail>/Beschr}"/>
+				</cells>
+			</ColumnListItem>
+		</Table>
+	</Panel>
+</c:FragmentDefinition>

@@ -1,0 +1,57 @@
+<mvc:View
+	controllerName="funzionalitareimputazione.controller.ProvisionDetail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.f"
+>
+	<f:DynamicPage
+		showFooter="true"
+		class="dynamicPageContent"
+	>
+		<f:header>
+			<f:DynamicPageHeader
+				pinnable="false"
+				class="dynamicPageHeader"
+			>
+				<c:Fragment
+					fragmentName="funzionalitareimputazione.view.fragment.HeaderProvision"
+					type="XML"
+				/>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<c:Fragment
+				fragmentName="funzionalitareimputazione.view.fragment.TableProvisionDetail"
+				type="XML"
+			/>
+		</f:content>
+		<f:footer>
+			<OverflowToolbar>
+				<Button
+					id="footerBtnNavBack"
+					text="{i18n>footerBtnNavBack}"
+					type="Emphasized"
+					press="onNavBack"
+				>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+				<ToolbarSpacer/>
+				<Button
+					id="btnDeleteReimputation"
+					text="{i18n>btnDeleteReimputation}"
+					type="Emphasized"
+					press="onDelete"
+					ariaHasPopup="Dialog"
+					visible="false"
+				>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>

@@ -1,0 +1,6 @@
+.dynamicPageContent > div > div > div {
+  padding: 0;
+}
+.dynamicPageHeader {
+  padding: 0 !important;
+}

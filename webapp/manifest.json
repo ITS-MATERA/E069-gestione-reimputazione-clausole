@@ -1,0 +1,172 @@
+{
+  "_version": "1.17.0",
+  "sap.app": {
+    "id": "funzionalitareimputazione",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:worklist",
+      "version": "1.9.3",
+      "toolsId": "68c473ff-94b6-4a82-9ad2-433523f10e41"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZS4_FUNZ_REIMP_CLA_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZSS4_CA_CONI_VISIBILITA_SRV": {
+        "uri": "/sap/opu/odata/sap/ZSS4_CA_CONI_VISIBILITA_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/ZSS4_CA_CONI_VISIBILITA_SRV/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.71.50",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {},
+        "zsap.com.r3.cobi.s4.custposfin.z_s4_zposfinlink": {},
+        "custlinksar.custlinksar": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "funzionalitareimputazione.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
+        }
+      },
+      "ZSS4_CA_CONI_VISIBILITA_SRV": {
+        "dataSource": "ZSS4_CA_CONI_VISIBILITA_SRV",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css",
+          "id": "stylecss"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "funzionalitareimputazione.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": ["notFound"]
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "provisions",
+          "target": ["provisions"]
+        },
+        {
+          "pattern": "ProvisionDetail/{Bukrs},{Gjahr},{Fikrs},{Zammin},{Zregistrato},{Zufficioliv1},{ZCodGius},{Zufficioliv2},{Zcoddecr},{ZidIpe},{ZCodCla},{ZCodIpe},{ZNumCla}",
+          "name": "provisionDetail",
+          "target": ["provisionDetail"]
+        },
+        {
+          "pattern": "ProvisionRegisterReimputation/{Blpos},{Belnr},{Bukrs},{Gjahr},{Fikrs},{Zammin},{Zregistrato},{Zufficioliv1},{ZCodGius},{Zufficioliv2},{Zcoddecr},{ZidIpe},{ZCodCla},{ZCodIpe},{ZNumCla},{AgrName},{ConiFikrs},{ConiPrctr}",
+          "name": "provisionRegisterReimputation",
+          "target": ["provisionRegisterReimputation"]
+        }
+      ],
+      "targets": {
+        "provisions": {
+          "viewName": "Provisions",
+          "viewId": "provisions",
+          "viewLevel": 1
+        },
+        "provisionDetail": {
+          "viewName": "ProvisionDetail",
+          "viewId": "provisionDetail",
+          "viewLevel": 2
+        },
+        "provisionRegisterReimputation": {
+          "viewName": "ProvisionRegisterReimputation",
+          "viewId": "provisionRegisterReimputation",
+          "viewLevel": 2
+        },
+        "objectNotFound": {
+          "viewName": "ObjectNotFound",
+          "viewId": "objectNotFound"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "funzionalitareimputazione.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    }
+  }
+}

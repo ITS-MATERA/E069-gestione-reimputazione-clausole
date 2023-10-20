@@ -1,0 +1,174 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+>
+	<Panel
+		id="pnlTableProvisions"
+		visible="false"
+		backgroundDesign="Transparent"
+	>
+		<Table
+			id="tblProvisions"
+			width="auto"
+			class="sapUiResponsiveMargin"
+			items="{
+				path: 'ProvisionsList>/'
+			}"
+			noDataText="{provisionsModel>/tableNoDataText}"
+			mode="SingleSelectLeft"
+			selectionChange="onSelectedItem"
+			updateFinished="onUpdateFinished"
+			fixedLayout="false"
+			growing="true"
+		>
+			<headerToolbar>
+				<Toolbar>
+					<Label text="{i18n>provisionsTableTitle}"/>
+					<ToolbarSpacer/>
+					<Button
+						id="btnProvisionDetail"
+						icon="sap-icon://search"
+						text="{i18n>tableBtnProvisionDetail}"
+						type="Emphasized"
+						press="onShowDetail"
+					/>
+					<Button
+						id="btnProvisionsExport"
+						icon="sap-icon://excel-attachment"
+						text="{i18n>tableBtnProvisionsExport}"
+						type="Emphasized"
+						press="onExport"
+					/>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column
+					id="gjahr"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnGjahr}"/>
+					</header>
+				</Column>
+				<Column
+					id="zammin"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZammin}"/>
+					</header>
+				</Column>
+				<Column
+					id="zufficioliv1"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZufficioliv1}"/>
+					</header>
+				</Column>
+				<Column
+					id="zufficioliv2"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZufficioliv2}"/>
+					</header>
+				</Column>
+				<Column
+					id="zcoddecr"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZcoddecr}"/>
+					</header>
+				</Column>
+				<Column
+					id="zCodIpe"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZCodIpe}"/>
+					</header>
+				</Column>
+				<Column
+					id="zNumCla"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZNumCla}"/>
+					</header>
+				</Column>
+				<Column
+					id="fdatk"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnFdatk}"/>
+					</header>
+				</Column>
+				<Column
+					id="zImpIpeCl"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZImpIpeCl}"/>
+					</header>
+				</Column>
+				<Column
+					id="ktext"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnKtext}"/>
+					</header>
+				</Column>
+				<Column
+					id="zStatoCla"
+					minScreenWidth="Tablet"
+					demandPopin="true"
+				>
+					<header>
+						<Text text="{i18n>tableNameColumnZStatoCla}"/>
+					</header>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier text="{ProvisionsList>Gjahr}"/>
+						<Text text="{ProvisionsList>Zammin}"/>
+						<Text text="{ProvisionsList>Zufficioliv1}"/>
+						<Text text="{ProvisionsList>Zufficioliv2}"/>
+						<Text text="{ProvisionsList>Zcoddecr}"/>
+						<Text text="{ProvisionsList>ZCodIpe}"/>
+						<Text text="{ProvisionsList>ZNumCla}"/>
+						<Text text="{
+							path: 'ProvisionsList>Fdatk',
+							type: 'sap.ui.model.type.Date',
+							formatOptions: {
+								pattern: 'yyyy'
+							}
+						}"/>
+						<Text text="{ProvisionsList>ZImpIpeCl}"/>
+						<Text text="{ProvisionsList>ZoggSpesIm}"/>
+						<Text text="{
+							path: 'ProvisionsList>ZStatoCla',
+							formatter: '.formatter.formatStateCla'
+						}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Panel>
+</c:FragmentDefinition>

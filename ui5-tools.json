@@ -1,0 +1,19 @@
+{
+  "deployer": {
+    "type": "Gateway",
+    "options": {
+      "conn": {
+        "server": "http://l2vs2slass01.mef.gov.it:8000",
+        "client": "100"
+      },
+      "ui5": {
+        "language": "EN",
+        "package": "Z_ACN_S4_COSP_FIORI",
+        "bspcontainer": "Z_S4_REIMPU",
+        "bspcontainer_text": "Funzionalità per la reimputazione clausole",
+        "calc_appindex": true,
+        "transportno": "S2SK919320"
+      }
+    }
+  }
+}
