@@ -72,7 +72,7 @@
 				id="hdrFistl"
 				anno="{ProvisionHeader>/Gjahr}"
 				eos="E"
-				fikrs="{ProvisionHeader>/Fikrs}"
+				fikrs="{ProvisionHeader>/Fikrs}" 
 				fase="GEST"
 				SEM_OBJ=""
 				reale="R"
