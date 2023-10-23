@@ -102,6 +102,7 @@ sap.ui.define(
             .then(function () {
               oDataModel.read("/" + sPath, {
                 success: function (data) {
+                  console.log(data);
                   oPanelTableProvisionDetail.setVisible(true);
                   if (data.ZStatoCla === "03") {
                     bDelete.setVisible(true);
